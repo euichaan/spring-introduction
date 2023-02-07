@@ -1,7 +1,6 @@
 package com.me.hellospring.repository;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,5 +34,9 @@ public class MemoryMemberRepository implements MemberRepository {
 	@Override
 	public List<Member> findAll() {
 		return new ArrayList<>(store.values());
+	}
+
+	public void clearStore() {
+		store.clear();
 	}
 }
