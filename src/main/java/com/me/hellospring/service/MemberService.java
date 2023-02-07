@@ -8,7 +8,11 @@ import com.me.hellospring.repository.MemberRepository;
 import com.me.hellospring.repository.MemoryMemberRepository;
 
 public class MemberService {
-	private final MemberRepository memberRepository = new MemoryMemberRepository();
+	private final MemberRepository memberRepository;
+
+	public MemberService(MemberRepository memberRepository) {
+		this.memberRepository = memberRepository;
+	}
 
 	public Long join(Member member) {
 		validateDuplicateMember(member);
